@@ -1,0 +1,21 @@
+{
+  "name": "OnlineAds",
+  "version": "0.0.1",
+  "description": "A web application to handle ficitve ads",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Gustav Stensson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-shell": "^0.4.1",
+    "tsd": "^0.5.7"
+  }
+}
