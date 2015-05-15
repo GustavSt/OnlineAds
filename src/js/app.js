@@ -1,3 +1,3 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
-angular.module("app");
+var app = angular.module("app", ["ui.router"]);

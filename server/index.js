@@ -4,7 +4,7 @@ var express = require("express");
 var app = express();
 
 app.use(express.static("public"));
-
+app.use("/views", express.static("src/views"));
 app.get("/", function (request, response) {
 	
 });
