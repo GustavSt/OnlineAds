@@ -6,3 +6,7 @@ node_modules
 
 #typings
 typings
+
+#"compiled files"
+public/*.js
+public/*.css
