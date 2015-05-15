@@ -13,6 +13,12 @@
     },
     "angularjs/angular.d.ts": {
       "commit": "7d2f0aa875cc3bc41f3567e3ff99d344df986155"
+    },
+    "angular-ui-router/angular-ui-router.d.ts": {
+      "commit": "7d2f0aa875cc3bc41f3567e3ff99d344df986155"
+    },
+    "gulp/gulp.d.ts": {
+      "commit": "7d2f0aa875cc3bc41f3567e3ff99d344df986155"
     }
   }
 }
