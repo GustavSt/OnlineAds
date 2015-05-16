@@ -1,23 +1,6 @@
 <div class="container">
-	<div class="row">
-		<div class="col-sm-4">
-			<online-ad></online-ad>
-		</div>
-		<div class="col-sm-4">
-			<online-ad></online-ad>
-		</div>
-		<div class="col-sm-4">
-			<online-ad></online-ad>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-4">
-			<online-ad></online-ad>
-		</div>
-		<div class="col-sm-4">
-			<online-ad></online-ad>
-		</div>
-		<div class="col-sm-4">
+	<div class="row" ng-repeat="adsRow in adsRows">
+		<div class="col-sm-4" ng-repeat="ad in adsRow">
 			<online-ad></online-ad>
 		</div>
 	</div>

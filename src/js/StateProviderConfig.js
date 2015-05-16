@@ -6,7 +6,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 	$stateProvider
 		.state("ads", {
 		url: "/ads",
-		templateUrl: "../views/AdsList.html"
+		templateUrl: "../views/AdsList.html",
+		controller: "AdsListController"
 	})
 		.state("about", {
 		url: "/about",

@@ -1,6 +1,6 @@
 $adHeight: 380px;
 $activeColour: lightgreen;
-$inactiveColour: red;
+$inactiveColour: indianred;
 body {
   padding-top: 60px;
   background-color: lightgray;
@@ -33,7 +33,7 @@ body {
         }
       }
       &.inactive{
-        background-color: $activeColour;
+        background-color: $inactiveColour;
         svg circle{
           fill: $inactiveColour;
         }
