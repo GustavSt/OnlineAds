@@ -1,4 +1,6 @@
 $adHeight: 380px;
+$activeColour: lightgreen;
+$inactiveColour: red;
 body {
   padding-top: 60px;
   background-color: lightgray;
@@ -16,19 +18,35 @@ body {
     margin-bottom: 20px;
     background-color: white;
    .online-ad-img {
-     overflow: hidden;
+      overflow: hidden;
       height: $adHeight / 2.5;
     }
     .ad-info {
-      border-top: 4px;
-      border-top-style: solid;
-
       text-align: center;
+    }
+    .online-ad-status {
+      height: 4px;
       &.active {
-        border-top-color: green;
+        background-color: $activeColour;
+        svg circle{
+          fill: $activeColour;
+        }
       }
-      &.in-active {
-        border-top-color: red;
+      &.inactive{
+        background-color: $activeColour;
+        svg circle{
+          fill: $inactiveColour;
+        }
+      }
+      svg {
+        position: absolute;
+        left: 73%;
+        top: $adHeight / 2.8;
+        & path{
+          stroke: white;
+          stroke-width: 3px;
+          
+        }
       }
     }
   }
