@@ -10,8 +10,9 @@ body {
     padding-top: 0px;
   }
 }
-.row {
-  .online-ad {
+
+
+.online-ad {
     display: block;
     overflow: hidden;
     height: $adHeight;
@@ -21,9 +22,17 @@ body {
       overflow: hidden;
       height: $adHeight / 2.5;
     }
+    .online-ad-name {
+      position: absolute;
+      color: white;
+      text-shadow: 1px 1px 2px gray;
+      left:20%;
+      top: $adHeight/5;
+    }
     .ad-info {
       text-align: center;
     }
+    
     .online-ad-status {
       height: 4px;
       &.active {
@@ -49,4 +58,3 @@ body {
       }
     }
   }
-}
