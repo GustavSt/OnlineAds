@@ -6,7 +6,6 @@ app.directive("onlineAd", function () {
 		templateUrl: "../views/partials/onlineAd.html",
 		link: function ($scope, element, attrs) {
 			
-		}	
-
+		}
 	};
 });
