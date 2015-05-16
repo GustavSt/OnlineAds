@@ -1,8 +1,35 @@
+$adHeight: 380px;
 body {
   padding-top: 60px;
+  background-color: lightgray;
 }
 @media (max-width: 979px) {
   body {
     padding-top: 0px;
+  }
+}
+.row {
+  .online-ad {
+    display: block;
+    overflow: hidden;
+    height: $adHeight;
+    margin-bottom: 20px;
+    background-color: white;
+   .online-ad-img {
+     overflow: hidden;
+      height: $adHeight / 2.5;
+    }
+    .ad-info {
+      border-top: 4px;
+      border-top-style: solid;
+
+      text-align: center;
+      &.active {
+        border-top-color: green;
+      }
+      &.in-active {
+        border-top-color: red;
+      }
+    }
   }
 }
