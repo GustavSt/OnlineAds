@@ -1,4 +1,4 @@
-/// <reference path="../../typings/tsd.d.ts" />
+/// <reference path="app.js" />
 
 app.config(function ($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise("/ads");
