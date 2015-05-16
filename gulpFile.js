@@ -29,7 +29,7 @@ gulp.task("watch-sass", function () {
 });
 
 gulp.task("compress", function () {
-	return gulp.src(["./src/js/app.js", "./src/js/**/*"])
+	return gulp.src(["./src/js/app.js", "./src/js/Ads List/*","./src/js/*.js"])
 	.pipe(concat("main.js"))
 	.pipe(gulp.dest("public"));
 });
