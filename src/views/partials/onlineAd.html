@@ -1,16 +1,21 @@
 <div class="online-ad">
 	<div class="online-ad-img">
-		<div class="online-ad-name h3">
-			{{ad.name}}
-		</div>
+		<div class="online-ad-name h3">{{ad.name}}</div>
 		<img ng-src="{{ad.picture}}"></img>
 	</div>
-	<ad-status>
-	</ad-status>
-
+	<ad-status></ad-status>
 	<div class="ad-info">
-		<div>Campaign</div>
-		<div>Impressions</div>
-		<div>Spend</div>
+		<div class="row">
+			<div class="col-xs-5 info-property text-right">Campaign:</div>
+			<div class="col-xs-6 info-value ">{{ad.campaignName}}</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-5 info-property text-right">Impressions:</div>
+			<div class="col-xs-6 info-value ">{{ad.impressions}}</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-5 info-property text-right">Spend:</div>
+			<div class="col-xs-6 info-value ">${{ad.spend}}</div>
+		</div>
 	</div>
 </div>

@@ -30,7 +30,18 @@ body {
       top: $adHeight/5;
     }
     .ad-info {
-      text-align: center;
+      font-family: "Verdana", sans-serif;
+      padding-top: 10px;
+      .info-property, .info-value {
+        margin-top: 20px;
+      }
+      .info-property{
+        color: lightgray;
+      }
+      .info-value {
+        color: gray;
+      }
+      
     }
     
     .online-ad-status {
