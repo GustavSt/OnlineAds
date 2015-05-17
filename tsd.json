@@ -22,6 +22,9 @@
     },
     "mongoose/mongoose.d.ts": {
       "commit": "7d2f0aa875cc3bc41f3567e3ff99d344df986155"
+    },
+    "angularjs/angular-resource.d.ts": {
+      "commit": "7d2f0aa875cc3bc41f3567e3ff99d344df986155"
     }
   }
 }

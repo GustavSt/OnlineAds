@@ -1,6 +1,6 @@
 /// <reference path="../app.js" />
 
-app.directive("newAdModal", function () {
+app.directive("newAdModal", ["adsService", function (adsService) {
 	return {
 		replace: true,
 		scope: true,
@@ -13,6 +13,14 @@ app.directive("newAdModal", function () {
 				if (!isFormValid()) {
 					return;
 				}
+				adsService.addNewAd({
+					adName: $scope.adName,
+					campaignName: $scope.campaignName,
+					pictureUrl: $scope.pictureUrl,
+					description: $scope.description
+				}).$promise.then(function (createdAd) {
+					$scope.ads.push(createdAd);
+				});
 				element.modal("hide");
 			};
 			function isFormValid() {
@@ -36,4 +44,4 @@ app.directive("newAdModal", function () {
 			});
 		}
 	};
-});
+}]);

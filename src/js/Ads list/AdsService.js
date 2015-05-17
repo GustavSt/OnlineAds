@@ -1,8 +1,16 @@
 /// <reference path="../app.js" />
 
 app.service("adsService", ["$resource", function ($resource) {
+	this.adsResource = $resource(
+		"/api/ads/:id",
+		{ id: "@_id" },
+		{
+			"update": { method: "PUT" }
+		});
+
+
 	this.getAds = function () {
-		return $resource("/api/ads/:id", {id: "@_id"}).query();
+		return this.adsResource.query();
 	};
 
 	this.buildAdRows = function (ads) {
@@ -17,5 +25,9 @@ app.service("adsService", ["$resource", function ($resource) {
 			}
 		}
 		return adsRows;
+	};
+
+	this.addNewAd = function (newAd) {
+		return this.adsResource.save(newAd);
 	};
 }]);
