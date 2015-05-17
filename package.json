@@ -2,14 +2,15 @@
   "name": "OnlineAds",
   "version": "0.0.1",
   "description": "A web application to handle ficitve ads",
-  "main": "app.js",
+  "main": "server/index.js",
   "scripts": {
     "test": "test"
   },
   "author": "Gustav Stensson",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.12.3"
+    "express": "^4.12.3",
+    "mongoose": "^4.0.3"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
