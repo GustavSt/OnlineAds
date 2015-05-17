@@ -4,8 +4,12 @@ app.controller("AdsListController",
 	["$scope", "adsService",
 		function ($scope, adsService) {
 			$scope.adsRows = [];
-
-			adsService.getAds().$promise.then(function (ads) {
-				$scope.adsRows = adsService.buildAdRows(ads);
-			});
+			$scope.ads = adsService.getAds();
+			
+			$scope.$watch("ads", function (newValue, oldValue) {
+				if(newValue === oldValue){
+					return;
+				}
+				$scope.adsRows = adsService.buildAdRows(newValue);
+			}, true);
 		}]);
