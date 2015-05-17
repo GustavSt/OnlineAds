@@ -6,6 +6,10 @@ app.controller("AdsListController",
 			$scope.adsRows = [];
 			$scope.ads = adsService.getAds();
 			
+			$scope.newAd = function () {
+				$scope.$broadcast("openNewAdModal");
+			};
+			
 			$scope.$watch("ads", function (newValue, oldValue) {
 				if(newValue === oldValue){
 					return;
