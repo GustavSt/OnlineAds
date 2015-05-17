@@ -41,7 +41,16 @@ body {
       .info-value {
         color: gray;
       }
-      
+    }
+    
+    .btn {
+      margin-top: 40px;
+      &.remove {
+        float: right;
+      }
+      &.edit{
+        float: right;
+      }
     }
     
     .online-ad-status {
