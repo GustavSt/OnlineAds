@@ -5,7 +5,9 @@ app.directive("onlineAd", function () {
 		replace: true,
 		templateUrl: "../views/partials/onlineAd.html",
 		link: function ($scope, element, attrs) {
-			
+			$scope.remove = function () {	
+				$scope.ad.$delete();
+			};
 		}
 	};
 });

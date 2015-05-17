@@ -2,7 +2,7 @@
 
 app.service("adsService", ["$resource", function ($resource) {
 	this.getAds = function () {
-		return $resource("/api/ads").query();
+		return $resource("/api/ads/:id", {id: "@_id"}).query();
 	};
 
 	this.buildAdRows = function (ads) {
