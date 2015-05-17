@@ -10,3 +10,6 @@ typings
 #"compiled files"
 public/*.js
 public/*.css
+
+#mongodb
+data
