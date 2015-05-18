@@ -1,6 +1,6 @@
 /// <reference path="../app.js" />
 
-app.directive("onlineAd", function () {
+app.directive("onlineAd",["$modal", function ($modal) {
 	return {
 		replace: true,
 		templateUrl: "../views/partials/onlineAd.html",
@@ -11,6 +11,13 @@ app.directive("onlineAd", function () {
 					$scope.ads.splice(indexToDelete, 1);
 				});
 			};
+			$scope.edit = function () {
+				$modal.open({
+					templateUrl: "../views/partials/adInfoModal.html",
+					controller: "EditAdController",
+					scope: $scope
+				});
+			};
 		}
 	};
-});
+}]);
