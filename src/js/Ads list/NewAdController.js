@@ -9,7 +9,7 @@ app.controller("NewAdController", ["$scope", "adsService", function ($scope, ads
 		adsService.addNewAd({
 			adName: $scope.adName,
 			campaignName: $scope.campaignName,
-			pictureUrl: $scope.pictureUrl,
+			picture: $scope.picture,
 			description: $scope.description,
 			isActive: $scope.isActive
 		}).$promise.then(function (createdAd) {
@@ -20,7 +20,7 @@ app.controller("NewAdController", ["$scope", "adsService", function ($scope, ads
 	function isFormValid() {
 		if ((!$scope.adName || $scope.adName === "")
 			|| (!$scope.campaignName || $scope.campaignName === "")
-			|| (!$scope.pictureUrl || $scope.pictureUrl === "")
+			|| (!$scope.picture || $scope.picture === "")
 			|| (!$scope.description || $scope.description === "")) {
 			return false;
 		}
