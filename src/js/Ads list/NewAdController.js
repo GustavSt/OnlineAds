@@ -10,7 +10,8 @@ app.controller("NewAdController", ["$scope", "adsService", function ($scope, ads
 			adName: $scope.adName,
 			campaignName: $scope.campaignName,
 			pictureUrl: $scope.pictureUrl,
-			description: $scope.description
+			description: $scope.description,
+			isActive: $scope.isActive
 		}).$promise.then(function (createdAd) {
 			$scope.$close(createdAd);
 		});
