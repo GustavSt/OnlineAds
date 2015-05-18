@@ -7,7 +7,7 @@ app.controller("NewAdController", ["$scope", "adsService", function ($scope, ads
 			return;
 		}
 		adsService.addNewAd({
-			adName: $scope.adName,
+			name: $scope.name,
 			campaignName: $scope.campaignName,
 			picture: $scope.picture,
 			description: $scope.description,
@@ -18,7 +18,7 @@ app.controller("NewAdController", ["$scope", "adsService", function ($scope, ads
 	};
 
 	function isFormValid() {
-		if ((!$scope.adName || $scope.adName === "")
+		if ((!$scope.name || $scope.name === "")
 			|| (!$scope.campaignName || $scope.campaignName === "")
 			|| (!$scope.picture || $scope.picture === "")
 			|| (!$scope.description || $scope.description === "")) {

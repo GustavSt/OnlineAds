@@ -1,6 +1,8 @@
 app.controller("EditAdController", ["$scope", "adsService", function ($scope, adsService) {
-	initForm($scope.ad);
-	
+	$scope.modalHeader = "Edit " + $scope.ad.name;
+	$scope.modalButton = "Edit";
+	mapAd($scope, $scope.ad);
+
 	$scope.submit = function () {
 		if (!isFormValid()) {
 			return;
@@ -8,14 +10,12 @@ app.controller("EditAdController", ["$scope", "adsService", function ($scope, ad
 		console.log("edit");
 		$scope.$close("fooo");
 	};
-	function initForm(ad) {
-		$scope.modalHeader = "Edit " + ad.name;
-		$scope.modalButton = "Edit";
-		$scope.adName = ad.name;
-		$scope.campaignName = ad.campaignName;
-		$scope.picture = ad.picture;
-		$scope.description = ad.description;
-		$scope.isActive = ad.isActive;
+	function mapAd(toAd, fromAd) {
+		toAd.name = fromAd.name;
+		toAd.campaignName = fromAd.campaignName;
+		toAd.picture = fromAd.picture;
+		toAd.description = fromAd.description;
+		toAd.isActive = fromAd.isActive;
 	}
 	function isFormValid() {
 		if ((!$scope.adName || $scope.adName === "")
