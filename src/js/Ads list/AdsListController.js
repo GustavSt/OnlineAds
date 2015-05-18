@@ -1,13 +1,19 @@
 /// <reference path="../app.js" />
 
 app.controller("AdsListController",
-	["$scope", "adsService",
-		function ($scope, adsService) {
+	["$scope", "adsService","$modal",
+		function ($scope, adsService, $modal) {
 			$scope.adsRows = [];
 			$scope.ads = adsService.getAds();
 			
 			$scope.newAd = function () {
-				$scope.$broadcast("openNewAdModal");
+				var modalInstance = $modal.open({
+					templateUrl: "../views/partials/adInfoModal.html",
+					controller: "NewAdController"
+				});
+				modalInstance.result.then(function (newAd) {
+					$scope.ads.push(newAd);
+				});
 			};
 			
 			$scope.$watch("ads", function (newValue, oldValue) {
