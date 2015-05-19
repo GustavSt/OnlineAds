@@ -13,3 +13,6 @@ public/*.css
 
 #mongodb
 data
+
+#log
+*.log
