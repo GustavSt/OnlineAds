@@ -20,6 +20,8 @@
     "gulp-sass": "^2.0.1",
     "gulp-sequence": "^0.3.2",
     "gulp-shell": "^0.4.1",
+    "karma": "^0.12.32",
+    "karma-jasmine": "^0.2.2",
     "tsd": "^0.5.7"
   }
 }
