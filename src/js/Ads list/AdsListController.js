@@ -14,7 +14,7 @@ app.controller("AdsListController",
 					controller: "NewAdController"
 				});
 				modalInstance.result.then(function (newAd) {
-					$scope.ads.push(newAd);
+					$scope.adsContainer.ads.push(newAd);
 				});
 			};
 
