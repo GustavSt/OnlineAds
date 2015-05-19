@@ -1,24 +1,24 @@
 app.controller("EditAdController", ["$scope", "adsService", function ($scope, adsService) {
 	$scope.modalHeader = "Edit " + $scope.ad.name;
 	$scope.modalButton = "Edit";
-	mapAd($scope, $scope.ad);
+	mapAdInfo($scope, $scope.ad);
 
 	$scope.submit = function () {
 		if (!isFormValid()) {
 			return;
 		}
-		console.log("edit");
-		$scope.$close("fooo");
+		mapAdInfo($scope.ad, $scope);
+		$scope.$close($scope.ad.$update());
 	};
-	function mapAd(toAd, fromAd) {
-		toAd.name = fromAd.name;
-		toAd.campaignName = fromAd.campaignName;
-		toAd.picture = fromAd.picture;
-		toAd.description = fromAd.description;
-		toAd.isActive = fromAd.isActive;
+	function mapAdInfo(toAdInfo, fromAdInfo) {
+		toAdInfo.name = fromAdInfo.name;
+		toAdInfo.campaignName = fromAdInfo.campaignName;
+		toAdInfo.picture = fromAdInfo.picture;
+		toAdInfo.description = fromAdInfo.description;
+		toAdInfo.isActive = fromAdInfo.isActive;
 	}
 	function isFormValid() {
-		if ((!$scope.adName || $scope.adName === "")
+		if ((!$scope.name || $scope.name === "")
 			|| (!$scope.campaignName || $scope.campaignName === "")
 			|| (!$scope.picture || $scope.picture === "")
 			|| (!$scope.description || $scope.description === "")) {

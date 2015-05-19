@@ -18,6 +18,28 @@ app.get("/api/ads", function (request, response) {
 	});
 });
 
+app.put("/api/ads/:id", function (request, response) {
+	var adToUpdate = request.body;
+	mongoose.model("ads").findById(request.params.id, function (error, ad) {
+		if(error){
+			return response.send(error);
+		} else if(ad === null) {
+			return response.sendStatus(404);
+		}
+		ad.name = adToUpdate.name;
+		ad.campaignName = adToUpdate.campaignName;
+		ad.picture = adToUpdate.picture;
+		ad.description = adToUpdate.description;
+		ad.isActive = adToUpdate.isActive;
+		ad.save(function (error) {
+			if(error){
+				return response.send(error);
+			}
+			response.send(ad);
+		});
+	});
+});
+
 app.post("/api/ads/", function (request, response) {
 	var Ads = mongoose.model("ads");
 	var ad = request.body;
