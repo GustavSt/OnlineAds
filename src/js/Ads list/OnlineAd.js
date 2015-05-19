@@ -1,21 +1,27 @@
 /// <reference path="../app.js" />
 
-app.directive("onlineAd",["$modal", function ($modal) {
+app.directive("onlineAd",["$modal", "adsService", function ($modal, adsService) {
 	return {
 		replace: true,
 		templateUrl: "../views/partials/onlineAd.html",
 		link: function ($scope, element, attrs) {
 			$scope.remove = function () {
 				$scope.ad.$delete().then(function () {
-					var indexToDelete = $scope.ads.indexOf($scope.ad);
-					$scope.ads.splice(indexToDelete, 1);
+					var indexToDelete = $scope.adsContainer.ads.indexOf($scope.ad);
+					$scope.adsContainer.ads.splice(indexToDelete, 1);
 				});
 			};
 			$scope.edit = function () {
-				$modal.open({
+				var modalInstance = $modal.open({
 					templateUrl: "../views/partials/adInfoModal.html",
 					controller: "EditAdController",
 					scope: $scope
+				});
+				
+				modalInstance.result.catch(function (error) {
+					$scope.ad.$get().catch(function (error) {
+						$scope.adsContainer.ads = adsService.getAds();
+					});
 				});
 			};
 		}

@@ -18,6 +18,18 @@ app.get("/api/ads", function (request, response) {
 	});
 });
 
+app.get("/api/ads/:id", function (request, response) {
+	mongoose.model("ads").findById(request.params.id, function (error, ad) {
+		if(error){
+			response.status(404);
+			return response.send(error);
+		} else if(ad === null){
+			return response.sendStatus(404);
+		}
+		response.send(ad);
+	});
+});
+
 app.put("/api/ads/:id", function (request, response) {
 	var adToUpdate = request.body;
 	mongoose.model("ads").findById(request.params.id, function (error, ad) {
@@ -48,7 +60,7 @@ app.post("/api/ads/", function (request, response) {
 	new Ads(ad).save(function (error, ad) {
 		if(error){
 			console.log(error);
-			return response.sendStatus(500);
+			return response.send(error);
 		}
 		return response.send(ad);
 	});

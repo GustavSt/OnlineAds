@@ -4,7 +4,9 @@ app.controller("AdsListController",
 	["$scope", "adsService", "$modal",
 		function ($scope, adsService, $modal) {
 			$scope.adsRows = [];
-			$scope.ads = adsService.getAds();
+			$scope.adsContainer = {
+				ads: adsService.getAds()
+			};
 
 			$scope.newAd = function () {
 				var modalInstance = $modal.open({
@@ -16,10 +18,10 @@ app.controller("AdsListController",
 				});
 			};
 
-			$scope.$watch("ads", function (newValue, oldValue) {
+			$scope.$watch("adsContainer", function (newValue, oldValue) {
 				if (newValue === oldValue) {
 					return;
 				}
-				$scope.adsRows = adsService.buildAdRows(newValue);
+				$scope.adsRows = adsService.buildAdRows(newValue.ads);
 			}, true);
 		}]);
