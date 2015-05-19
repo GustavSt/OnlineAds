@@ -5,11 +5,7 @@ body {
   padding-top: 60px;
   background-color: lightgray;
 }
-@media (max-width: 979px) {
-  body {
-    padding-top: 0px;
-  }
-}
+
 
 .online-ad {
     display: block;
@@ -20,15 +16,15 @@ body {
    .online-ad-img {
       overflow: hidden;
       height: $adHeight / 2.5;
-    }
-    .online-ad-name {
+   }
+   .online-ad-name {
       position: absolute;
       color: white;
       text-shadow: 1px 1px 2px gray;
       left:20%;
       top: $adHeight/5;
-    }
-    .ad-info {
+   }
+   .ad-info {
       font-family: "Verdana", sans-serif;
       padding-top: 10px;
       .info-property, .info-value {
@@ -40,40 +36,40 @@ body {
       .info-value {
         color: gray;
       }
-    }
+   }
     
-    .btn {
-      margin-top: 40px;
-      &.remove {
-        float: right;
-      }
-      &.edit{
-        float: right;
-      }
+   .btn {
+       margin-top: 40px;
+       &.remove {
+          float: right;
+       }
+       &.edit{
+         float: right;
+       }
     }
     
     .online-ad-status {
-      height: 4px;
-      &.active {
-        background-color: $activeColour;
-        svg circle{
-          fill: $activeColour;
-        }
-      }
-      &.inactive{
-        background-color: $inactiveColour;
-        svg circle{
-          fill: $inactiveColour;
-        }
-      }
-      svg {
-        position: absolute;
-        left: 73%;
-        top: $adHeight / 2.8;
-        & path{
-          stroke: white;
-          stroke-width: 3px;
-        }
-      }
+        height: 4px;
+        &.active {
+          background-color: $activeColour;
+          svg circle {
+            fill: $activeColour;
+          }
+       }
+       &.inactive {
+          background-color: $inactiveColour;
+          svg circle {
+            fill: $inactiveColour;
+          }
+       }
+       svg {
+          position: absolute;
+          left: 73%;
+          top: $adHeight / 2.8;
+          & path{
+            stroke: white;
+            stroke-width: 3px;
+          }
+       }
     }
   }
