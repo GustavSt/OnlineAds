@@ -23,6 +23,7 @@ describe("adsListController", function () {
 			adsService: adsServiceMock,
 			$modal: modalServiceMock
 		});
+		scope.$apply();
 	}));
 
 	describe("add a new ad", function () {
@@ -57,7 +58,15 @@ describe("adsListController", function () {
 	});
 	
 	describe("when adsContainer changes", function () {
-		
+		it("updates the adsRows", function () {
+			//Arrange
+			var newAd = {foo: "bar"};
+			//Act
+			scope.adsContainer.ads.push(newAd);
+			scope.$apply();
+			//Assert
+			expect(adsServiceMock.buildAdRows).toHaveBeenCalledWith(scope.adsContainer.ads);
+		});
 	});
 
 });
