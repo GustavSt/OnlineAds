@@ -59,6 +59,7 @@ app.post("/api/ads/", function (request, response) {
 	var ad = request.body;
 	ad.impressions = Math.round(Math.random() * 10000);
 	ad.spend = Math.round((Math.random() * 100000)) / 100;
+	ad.created = new Date();
 	new Ads(ad).save(function (error, ad) {
 		if(error){
 			console.log(error);
