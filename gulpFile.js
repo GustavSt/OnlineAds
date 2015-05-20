@@ -9,13 +9,31 @@ var sass = require("gulp-sass");
 var mongoose = require("mongoose");
 var adsSchema = require("./models/ads");
 var mockData = require("./mockdata.json");
+var karma = require("karma").server;
+
+function runTests(singleRun, done) {
+	karma.start({
+		configFile: __dirname + "/karma.conf.js",
+		singleRun: singleRun
+	}, done);
+}
 
 gulp.task("start-server", ["compress", "compile-sass"], shell.task([
 	"node server/index.js"
 ]));
 
-gulp.task("test", function () {
+gulp.task("test-dev", ["test-multiple"], function (done) {
+	gulp.watch(["./src/js/**/*.js", "test/**/*.js"], function () {
+		gulp.run("test-multiple");
+	});
+});
 
+gulp.task("test-multiple", function (done) {
+	runTests(false, done);
+});
+
+gulp.task("test-single", function (done) {
+	runTests(true, done);
 });
 
 gulp.task("re-populate-db", function () {
@@ -28,14 +46,13 @@ gulp.task("re-populate-db", function () {
 	return;
 });
 
-gulp.task("deploy", ["start-server"], function () {
+gulp.task("deploy", ["test-single", "start-server"], function () {
 });
 
 gulp.task("deploy-dev", sequence(["compress", "watch-js", "watch-sass"], "deploy"));
 
 gulp.task("watch-js", function () {
 	gulp.watch("./src/js/**/*.js", ["compress"]);
-	gulp.watch("server/index.js", ["start-server"]);
 });
 
 gulp.task("watch-sass", function () {
