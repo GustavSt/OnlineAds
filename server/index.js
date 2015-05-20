@@ -26,6 +26,7 @@ app.get("/api/ads/:id", function (request, response) {
 		} else if(ad === null){
 			return response.sendStatus(404);
 		}
+		response.status(200);
 		response.send(ad);
 	});
 });
@@ -47,6 +48,7 @@ app.put("/api/ads/:id", function (request, response) {
 			if(error){
 				return response.send(error);
 			}
+			response.status(200);
 			response.send(ad);
 		});
 	});
@@ -62,6 +64,7 @@ app.post("/api/ads/", function (request, response) {
 			console.log(error);
 			return response.send(error);
 		}
+		response.status(201);
 		return response.send(ad);
 	});
 });
@@ -72,7 +75,7 @@ app.delete("/api/ads/:id", function (request, response) {
 		if (error) {
 			response.send(error);
 		} else {
-			response.sendStatus(200);
+			response.sendStatus(204);
 		}
 	});
 });
