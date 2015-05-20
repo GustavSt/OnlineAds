@@ -13,15 +13,20 @@ app.service("adsService", ["$resource", function ($resource) {
 		return adsResource.query();
 	};
 
+	/**
+	 * returns an array of arrays each containg max 3 ads
+	 */
 	this.buildAdRows = function (ads) {
 		var adsRows = [];
 		for (var i = 0; i < ads.length; i++) {
+			var currentAd = ads[i];
+			var currentAdsRowsIndex = adsRows.length - 1;
 			if (i % 3 === 0) {
-				adsRows[adsRows.length] = [ads[i]];
-			} else if (!adsRows[adsRows.length - 1]) {
-				adsRows[adsRows.length - 1] = [ads[i]];
+				adsRows[adsRows.length] = [currentAd];
+			} else if (!adsRows[currentAdsRowsIndex]) {
+				adsRows[currentAdsRowsIndex] = [currentAd];
 			} else {
-				adsRows[adsRows.length - 1].push(ads[i]);
+				adsRows[currentAdsRowsIndex].push(currentAd);
 			}
 		}
 		return adsRows;
