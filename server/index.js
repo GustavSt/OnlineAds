@@ -8,7 +8,7 @@ var app = express();
 mongoose.connect("mongodb://localhost/onlineAds");
 
 app.use(express.static("public"));
-app.use("/views", express.static("src/views"));
+
 app.use(bodyParser.json());
 
 app.get("/api/ads", function (request, response) {

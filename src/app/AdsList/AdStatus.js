@@ -3,6 +3,6 @@
 app.directive("adStatus", function () {
 	return {
 		replace: true,
-		templateUrl: "../views/partials/adStatus.html",
+		templateUrl: "app/AdsList/adStatus.html",
 	};
 });

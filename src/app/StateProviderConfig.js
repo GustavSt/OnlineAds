@@ -6,11 +6,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 	$stateProvider
 		.state("ads", {
 		url: "/ads",
-		templateUrl: "../views/AdsList.html",
+		templateUrl: "app/AdsList/AdsList.html",
 		controller: "AdsListController"
 	})
 		.state("about", {
 		url: "/about",
-		templateUrl: "../views/About.html"
+		templateUrl: "app/About/About.html"
 	});
 });

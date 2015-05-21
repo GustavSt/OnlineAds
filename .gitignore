@@ -8,8 +8,8 @@ node_modules
 typings
 
 #"compiled files"
-public/*.js
-public/*.css
+public/**/*
+!public/*.jpg
 
 #mongodb
 data

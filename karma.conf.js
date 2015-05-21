@@ -8,9 +8,9 @@ module.exports = function (config) {
 			"https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap-tpls.min.js",
 			"https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.min.js",
 			"https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-mocks.js",
-			"src/js/app.js",
-			"./src/js/Ads List/*.js",
-			"src/js/*.js",
+			"src/app/app.js",
+			"./src/app/AdsList/*.js",
+			"src/app/*.js",
 			"test/**/*.js"
 		],
 		browsers: ["PhantomJS"],

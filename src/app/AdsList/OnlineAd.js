@@ -3,7 +3,7 @@
 app.directive("onlineAd",["$modal", "adsService", function ($modal, adsService) {
 	return {
 		replace: true,
-		templateUrl: "../views/partials/onlineAd.html",
+		templateUrl: "app/AdsList/onlineAd.html",
 		link: function ($scope, element, attrs) {
 			$scope.remove = function () {
 				$scope.ad.$delete().then(function () {
@@ -13,7 +13,7 @@ app.directive("onlineAd",["$modal", "adsService", function ($modal, adsService) 
 			};
 			$scope.edit = function () {
 				var modalInstance = $modal.open({
-					templateUrl: "../views/partials/adInfoModal.html",
+					templateUrl: "app/AdsList/adInfoModal.html",
 					controller: "EditAdController",
 					scope: $scope
 				});

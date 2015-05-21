@@ -10,7 +10,7 @@ app.controller("AdsListController",
 
 			$scope.newAd = function () {
 				var modalInstance = $modal.open({
-					templateUrl: "../views/partials/adInfoModal.html",
+					templateUrl: "app/AdsList/adInfoModal.html",
 					controller: "NewAdController"
 				});
 				modalInstance.result.then(function (newAd) {
