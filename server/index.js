@@ -19,6 +19,7 @@ app.get("/api/ads", function (request, response) {
 });
 
 app.get("/api/ads/:id", function (request, response) {
+	console.log("getting ad with id:", request.params.id);
 	mongoose.model("ads").findById(request.params.id, function (error, ad) {
 		if(error){
 			response.status(404);
@@ -32,6 +33,7 @@ app.get("/api/ads/:id", function (request, response) {
 });
 
 app.put("/api/ads/:id", function (request, response) {
+	console.log("updating ad with id:",request.params.id);
 	var adToUpdate = request.body;
 	mongoose.model("ads").findById(request.params.id, function (error, ad) {
 		if(error){
@@ -55,6 +57,7 @@ app.put("/api/ads/:id", function (request, response) {
 });
 
 app.post("/api/ads/", function (request, response) {
+	console.log("creating new ad");
 	var Ads = mongoose.model("ads");
 	var ad = request.body;
 	ad.impressions = Math.round(Math.random() * 10000);
