@@ -1,4 +1,4 @@
-app.controller("EditAdController", ["$scope", "adsService", function ($scope, adsService) {
+app.controller("EditAdController", ["$scope", function ($scope) {
 	$scope.modalHeader = "Edit " + $scope.ad.name;
 	$scope.modalButton = "Edit";
 	mapAdInfo($scope, $scope.ad);
